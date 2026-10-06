@@ -1,4 +1,3 @@
-import { flags } from "./flags.js"
 import type { PingResult } from "./ping.js"
 
 export function helpFormatLabel(): string {
@@ -6,12 +5,5 @@ export function helpFormatLabel(): string {
 }
 
 export function formatReport(result: PingResult): string {
-  const format = flags.outputFormat.getValue()
-
-  if (format === "json") {
-    return JSON.stringify(result)
-  }
-
-  const status = result.ok ? "UP" : "DOWN"
-  return `${result.url} is ${status} (${result.latencyMs}ms, ${result.attempts} attempt(s))`
+  return JSON.stringify(result)
 }
