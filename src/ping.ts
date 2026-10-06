@@ -18,7 +18,7 @@ async function tryOnce(url: string): Promise<{ ok: boolean; latencyMs: number }>
 }
 
 export async function ping(url: string): Promise<PingResult> {
-  const maxAttempts = flags.enableRetries.isEnabled() ? 3 : 1
+  const maxAttempts = 3
 
   let attempts = 0
   let last = { ok: false, latencyMs: 0 }
