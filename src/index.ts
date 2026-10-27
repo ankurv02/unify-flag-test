@@ -2,7 +2,7 @@
 import { betaExportEnabled } from "./dynamic-feature.js"
 import { initFlags } from "./flags.js"
 import { ping } from "./ping.js"
-import { formatReport, helpFormatLabel } from "./report.js"
+import { formatReport } from "./report.js"
 
 async function main(): Promise<void> {
   const sdkKey = process.env.PULSE_FM_SDK_KEY
@@ -12,7 +12,7 @@ async function main(): Promise<void> {
 
   const url = process.argv[2]
   if (!url) {
-    console.log(`Usage: pulse <url>  (report format controlled by flag: ${helpFormatLabel()})`)
+    console.log("Usage: pulse <url>")
     process.exit(1)
   }
 
